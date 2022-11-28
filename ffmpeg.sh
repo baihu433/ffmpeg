@@ -34,6 +34,8 @@ function num()													#选项
 function ffmpeg_arm()
 {
 
+        echo 'cd ' > ffmpegbak
+        source ffmpegbak
         git clone https://gitee.com/baihu433/ffmpeg-arm64.git
         mv /root/ffmpeg/ffmpeg-arm64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
@@ -45,6 +47,8 @@ function ffmpeg_arm()
 function ffmpeg_x86_64()
 {
     
+        echo 'cd ' > ffmpegbak
+        source ffmpegbak
         git clone https://gitee.com/baihu433/ffmpeg-amd6.git
         mv ~/ffmpeg/ffmpeg-amd64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
