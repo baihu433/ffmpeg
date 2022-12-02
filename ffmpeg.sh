@@ -33,26 +33,25 @@ function num()													#选项
 }
 function ffmpeg_arm()
 {
-
+        pushd ~/
         git clone https://gitee.com/baihu433/ffmpeg-arm64.git
         mv /root/ffmpeg-arm64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
         chmod +x /usr/local/bin/ffmpeg
         ffmpeg
         echo '安装完成'
-        
+        exit 0
 }
 function ffmpeg_x86_64()
 {
-    
+        pushd ~/  
         git clone https://gitee.com/baihu433/ffmpeg-amd6.git
         mv ~/ffmpeg-amd64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
         chmod +x /usr/local/bin/ffmpeg
         ffmpeg
         echo '安装完成'
-        
-        
+        exit 0
 }
 function  main()
 {
