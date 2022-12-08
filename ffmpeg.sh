@@ -3,16 +3,16 @@ function one()
 {
     cat <<eof
     
- **********************************************************************
-                        ffmpeg安装程序                 
+ ****************************************************************
+                      ffmpeg安装程序                 
                       
        1.安装ffmpeg_ARM64            2.安装ffmpeg_AMD64 
 
        手机选择1                      电脑选择2
 
-                        0.退出安装程序
+                       0.退出安装程序
                         
-***********************************************************************
+*****************************************************************
 eof
 }
 function num()													#选项
@@ -35,7 +35,7 @@ function ffmpeg_arm()
 {
         pushd ~/
         git clone https://gitee.com/baihu433/ffmpeg-arm64.git
-        mv /root/ffmpeg-arm64/ffmpeg /usr/local/bin
+        mv ~/ffmpeg-arm64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
         chmod +x /usr/local/bin/ffmpeg
         ffmpeg
