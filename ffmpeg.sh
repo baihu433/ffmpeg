@@ -45,7 +45,7 @@ function ffmpeg_arm()
 function ffmpeg_x86_64()
 {
         pushd ~/  
-        git clone https://gitee.com/baihu433/ffmpeg-amd6.git
+        git clone https://gitee.com/baihu433/ffmpeg-amd64.git
         mv ~/ffmpeg-amd64/ffmpeg /usr/local/bin
         ln -s /usr/local/bin/ffmpeg /usr/bin/ffmpeg
         chmod +x /usr/local/bin/ffmpeg
