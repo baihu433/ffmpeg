@@ -22,8 +22,8 @@ case $(arch) in
 esac
 curl -o ffmpeg https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${ffmpeg}/ffprobe
 curl -o ffprobe https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${ffmpeg}/ffprobe
-mv ffmpeg /usr/local/bin/ffmpeg
-mv ffprobe /usr/local/bin/ffprobe
+mv -f ffmpeg /usr/local/bin/ffmpeg
+mv -f ffprobe /usr/local/bin/ffprobe
 chmod +x /usr/local/bin/ffmpeg
 chmod +x /usr/local/bin/ffprobe
 if [ -e /usr/local/bin/ffmpeg ] && [ -e /usr/local/bin/ffprobe ]
