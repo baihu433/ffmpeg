@@ -1,27 +1,24 @@
 #!/bin/bash
 case $(arch) in
   aarch64|arm64)
-    ffmpeg=arm64
+    structure=arm64
     ;;
   amd64|x86_64)
-    ffmpeg=amd64
+    structure=amd64
     ;;
   arm|armhf|armv8l)
-    ffmpeg=armhf
-    ;;
-  i686)
-    ffmpeg=i686
+    structure=armhf
     ;;
   armel)
-    ffmpeg=armel
+    structure=armel
     ;;
   *)
     echo -e "\033[31m暂不支持您的设备\033[0m"
     exit
     ;;
 esac
-curl -o ffmpeg https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${ffmpeg}/ffprobe
-curl -o ffprobe https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${ffmpeg}/ffprobe
+curl -o ffmpeg https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${structure}/ffmpeg
+curl -o ffprobe https://gitee.com/baihu433/ffmpeg/raw/master/ffmpeg-${structure}/ffprobe
 mv -f ffmpeg /usr/local/bin/ffmpeg
 mv -f ffprobe /usr/local/bin/ffprobe
 chmod +x /usr/local/bin/ffmpeg
