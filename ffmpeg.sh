@@ -6,7 +6,7 @@ case $(arch) in
   amd64|x86_64)
     ffmpeg=amd64
     ;;
-  armhf)
+  arm|armhf|armv8l)
     ffmpeg=armhf
     ;;
   i686)
@@ -20,29 +20,10 @@ case $(arch) in
     exit
     ;;
 esac
-curl -o ffmpeg-release-${ffmpeg}-static.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${ffmpeg}-static.tar.xz
-curl -o ffmpeg.tar.xz.md5 https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${ffmpeg}-static.tar.xz.md5
-if md5sum -c ffmpeg.tar.xz.md5
-then
-echo -e "\033[36m下载成功\033[0m"
-else
-echo -e "\033[31m下载失败033[0m"
-exit
-fi
-if ! [ -x "$(command -v xz-utils)" ];then
-apt install xz-utils -y
-fi
-xz -d ffmpeg-release-${ffmpeg}-static.tar.xz
-mkdir ffmpeg
-tar -xvf ffmpeg-release-${ffmpeg}-static.tar -C ffmpeg
-path=$(ls ffmpeg)
-rm -rf /usr/local/bin/ffmpeg /usr/local/bin/ffmpeg &>/dev/null
-rm -rf /usr/local/bin/ffmpeg /usr/local/bin/ffmpeg &>/dev/null
-mv ffmpeg/${path}/ffmpeg /usr/local/bin/ffmpeg
-mv ffmpeg/${path}/ffprobe /usr/local/bin/ffprobe
+mv ffmpeg /usr/local/bin/ffmpeg
+mv ffprobe /usr/local/bin/ffprobe
 chmod +x /usr/local/bin/ffmpeg
 chmod +x /usr/local/bin/ffprobe
-rm -rf ffmpeg ffmpeg.tar
 if [ -e /usr/local/bin/ffmpeg ] && [ -e /usr/local/bin/ffprobe ]
 then
 ffmpeg
