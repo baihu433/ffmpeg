@@ -1,5 +1,5 @@
 #!/bin/bash
-case $(arch) in
+case $(uname -m) in
   aarch64|arm64)
     structure=arm64
     ;;
